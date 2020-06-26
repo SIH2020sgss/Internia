@@ -1,0 +1,61 @@
+import React, { Component } from "react";
+import "./Header.scss";
+import { Link } from "react-router-dom";
+
+class Header extends Component {
+  state = {};
+  render() {
+    return (
+      <div id="header" className="navbar shadow-sm p-0">
+        <div className="container-fluid">
+          <a className="navbar-brand" href="/">
+            <img src="/assets/images/internia.png" alt="Homepage" width={100} />
+          </a>
+          <div class="dropdown">
+            <img
+              src="/assets/images/user.jpeg"
+              alt="UserAvatar"
+              data-toggle="dropdown"
+              id="dropdownMenuButton"
+              className="rounded-circle bg-white"
+              width={50}
+              height={50}
+              style={{ cursor: "pointer", border: "none" }}
+            />
+            <div
+              id="dropdownMenu"
+              class="dropdown-menu dropdown-menu-right shadow-sm border-none"
+            >
+              <Link class="dropdown-item" to="/notifications">
+                <i className="fa fa-fw mr-2 fa-bell fa-sm" />
+                Notifications
+              </Link>
+              <Link class="dropdown-item" to="/search">
+                <i className="fa fa-fw mr-2 fa-coffee fa-sm" />
+                Search Internships
+              </Link>
+              <Link class="dropdown-item" to="/applied">
+                <i className="fa fa-fw mr-2 fa-clipboard fa-sm" />
+                Applied Internships
+              </Link>
+              <Link class="dropdown-item" to="/profile">
+                <i className="fa fa-fw mr-2 fa-user fa-sm" />
+                Profile
+              </Link>
+              <Link class="dropdown-item" to="/preferences">
+                <i className="fa fa-fw mr-2 fa-cog fa-sm" />
+                Preferences
+              </Link>
+              <Link class="dropdown-item" to="/logout">
+                <i className="fa fa-fw mr-2 fa-lock fa-sm" />
+                Log out
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
+export default Header;
